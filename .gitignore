@@ -22,3 +22,31 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# === MAVEN ===
+# Ignora a pasta onde o Maven gera o código compilado e os arquivos .jar/.war
+target/
+
+# Ignora arquivos de release temporários do Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.versionsBackup
+release.properties
+
+
+# === INTELLIJ IDEA ===
+# Ignora a pasta de configurações locais do projeto da IDE
+.idea/
+
+# Se você usa módulos no IntelliJ, ignora os arquivos de módulo individuais
+*.iml
+*.iws
+*.ipr
+
+# Ignora especificamente arquivos de log e tarefas locais do IntelliJ dentro da pasta .idea
+# (Caso queira compartilhar o dicionário ou o code style, pode subir, mas ignorar a pasta inteira é o mais seguro)
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
+.idea/libraries/
