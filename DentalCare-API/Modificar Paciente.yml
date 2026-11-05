@@ -1,0 +1,25 @@
+info:
+  name: Modificar Paciente
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: http://localhost:8080/api/pacientes/1
+  body:
+    type: json
+    data: |-
+      {
+        "nome": "Matheus da Silva",
+        "cpf": "52998224725",
+        "telefone": "31900000000",
+        "dataNascimento": "2000-05-15"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
