@@ -1,0 +1,25 @@
+info:
+  name: Criar Paciente
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/api/pacientes
+  body:
+    type: json
+    data: |-
+      {
+        "nome": "Da Silva",
+        "cpf": "23563101000",
+        "telefone": "31999999999",
+        "dataNascimento": "2000-05-15"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

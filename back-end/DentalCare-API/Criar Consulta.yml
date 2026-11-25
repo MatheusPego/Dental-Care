@@ -1,0 +1,25 @@
+info:
+  name: Criar Consulta
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/api/consultas
+  body:
+    type: json
+    data: |-
+      {
+        "pacienteId": 1,
+        "dentistaId": 1,
+        "dataHoraInicio": "2026-12-10T14:00:00",
+        "dataHoraFim": "2026-12-10T14:30:00"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

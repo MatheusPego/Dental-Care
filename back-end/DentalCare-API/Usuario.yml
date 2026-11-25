@@ -1,0 +1,28 @@
+info:
+  name: Criar Usuario
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/api/usuarios
+  body:
+    type: json
+    data: |-
+      {
+        "nome": "Dr. João Santos",
+        "cpf": "SUBSTITUIR_POR_CPF_VALIDO",
+        "email": "joao@dentalcare.com",
+        "senha": "123",
+        "perfil": "DENTISTA",
+        "cro": "MG-12345",
+        "turno": "MANHA"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

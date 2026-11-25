@@ -1,0 +1,23 @@
+info:
+  name: Criar Prontuario
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/api/prontuarios
+  body:
+    type: json
+    data: |-
+      {
+        "consultaId": 1,
+        "descricao": "Limpeza e avaliação geral."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
