@@ -26,13 +26,18 @@ public class UsuariosController{
         return service.listarAtivos();
     }
 
+    @GetMapping("/inativos")
+    public List<UsuariosResponse> listarInativos() {
+        return service.listarDesativos();
+    }
+
     @GetMapping("/{id}")
     public UsuariosResponse buscar(@PathVariable Long id) {
         return service.buscar(id);
     }
 
     @PutMapping("/{id}")
-    public UsuariosResponse atualizar(@PathVariable Long id, @Valid @RequestBody UsuariosRequest dados) {
+    public UsuariosResponse atualizar(@PathVariable Long id, @Valid @RequestBody UsuariosAtualizacaoRequest dados) {
         return service.atualizar(id, dados);
     }
 
@@ -40,5 +45,11 @@ public class UsuariosController{
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void inativar(@PathVariable Long id) {
         service.inativar(id);
+    }
+
+    @PatchMapping("/{id}/reativar")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void reativar(@PathVariable Long id) {
+        service.reativar(id);
     }
 }

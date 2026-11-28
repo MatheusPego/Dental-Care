@@ -58,7 +58,7 @@ public class ProntuarioService {
     @Transactional
     public ProntuarioResponse adicionarEvolucao(Long id, EvolucaoRequest dados) {
         Prontuario prontuario = obter(id);
-        prontuario.adicionarEvolucao(dados.texto());
+        prontuario.adicionarEvolucao(dados.descricao());
         return ProntuarioResponse.de(prontuario);
     }
 

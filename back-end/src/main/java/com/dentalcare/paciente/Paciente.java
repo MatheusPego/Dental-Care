@@ -42,4 +42,9 @@ public class Paciente extends Pessoa {
     public String getTelefone() { return telefone; }
     public LocalDate getDataNascimento() { return dataNascimento; }
     public boolean isAtivo() { return ativo; }
+
+    @Override
+    public String getIdentificacaoFormatada() {
+        return "Paciente: " + getNome() + " | Contato: " + this.telefone;
+    }
 }

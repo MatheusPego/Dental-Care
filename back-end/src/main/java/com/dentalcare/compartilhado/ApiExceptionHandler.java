@@ -21,4 +21,9 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     public ProblemDetail conflito(RegraDeNegocioException ex) {
         return ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
     }
+
+    @ExceptionHandler(CredenciaisInvalidasException.class)
+    public ProblemDetail credenciaisInvalidas(CredenciaisInvalidasException ex) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, ex.getMessage());
+    }
 }

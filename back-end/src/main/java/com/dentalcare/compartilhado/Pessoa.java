@@ -40,4 +40,16 @@ public abstract class Pessoa {
     public Long getId() { return id; }
     public String getNome() { return nome; }
     public String getCpf() { return cpf; }
+
+    // Metodo polimórfico que será usado na tela
+    public abstract String getIdentificacaoFormatada();
+
+    // Metodo auxiliar que recebe o tipo genérico Pessoa (Polimorfismo dinâmico)
+    public static String gerarIdentificacao(Pessoa pessoa) {
+        if (pessoa == null) {
+            return "";
+        }
+        return pessoa.getIdentificacaoFormatada();
+    }
+
 }

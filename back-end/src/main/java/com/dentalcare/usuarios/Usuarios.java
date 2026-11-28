@@ -5,6 +5,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
+// 1º passo: @Entity + @Table ligam a classe à tabela usuarios.
 @Entity
 @Table(name = "usuarios")
 public class Usuarios extends Pessoa {
@@ -41,13 +42,14 @@ public class Usuarios extends Pessoa {
     public void atualizar(String nome, String cpf, String email, String senha, String perfil, String cro, String turno) {
         alterarDados(nome, cpf);
         this.email = email;
-        this.senha = senha;
+        if (senha != null) { this.senha = senha; }
         this.perfil = perfil;
         this.cro = cro;
         this.turno = turno;
     }
 
     public void inativar() { this.ativo = false; }
+    public void reativar() { this.ativo = true; }
 
     public String getEmail() { return email; }
     public String getSenha() { return senha; }
@@ -56,9 +58,8 @@ public class Usuarios extends Pessoa {
     public String getTurno() { return turno; }
     public boolean isAtivo() { return ativo; }
 
+    @Override
     public String getIdentificacaoFormatada() {
-        return "Usuários: (" + this.perfil + "): " + getNome()
-                + (this.cro != null ? "\nCRO: " + this.cro : "")
-                + (this.turno != null ? "\nTurno: " + this.turno : "");
+        return "Usuário: (" + this.perfil + ") " + getNome() + (this.cro != null ? "\nCRO: " + this.cro : "") + (this.turno != null ? "\nTurno: " + this.turno : "");
     }
 }
