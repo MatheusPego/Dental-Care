@@ -20,7 +20,7 @@ target/
 *.ipr
 * .log
 
-###Front
+### Secrets
 .env
 
 ### NetBeans ###
@@ -35,3 +35,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Dependencies
+node_modules
+
+# OS files
+.DS_Store
+Thumbs.db
